@@ -31,6 +31,7 @@ Average/Worst case: O(n²)
 
 3.2 Insertion Sort
 Builds the sorted list one element at a time
+
 Efficient for small or nearly sorted datasets
 
 Time Complexity:
