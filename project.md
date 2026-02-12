@@ -8,11 +8,11 @@ The tool helps demonstrate the practical impact of algorithmic time complexity u
 
 *Project Goals:*
 
--Implement multiple sorting algorithms
+- Implement multiple sorting algorithms
 
--Compare their performance on identical input data
+- Compare their performance on identical input data
 
--Measure execution time accurately
+- Measure execution time accurately
 
 -Demonstrate theoretical time complexity in practice
 
