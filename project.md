@@ -5,7 +5,7 @@ This project is a terminal-based sorting performance comparator designed to anal
 
 The tool helps demonstrate the practical impact of algorithmic time complexity using real execution time measurements.
 
-Project Goals
+Project Goals:
 
 Implement multiple sorting algorithms
 
