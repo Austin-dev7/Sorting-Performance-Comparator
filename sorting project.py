@@ -15,3 +15,15 @@ def bubble_sort(arr):
 #time complexity=0(n^2)
 
 #INSERTION SORT
+def insertion_sort(arr):
+    for i in range(1,len(arr)):
+        key=arr[i]
+        j=i-1
+        while j>=0 and key<arr[j]:
+            arr[j+1]=arr[j]
+            j-=1
+            arr[j+1]=key
+            return arr
+#insertion sort builds the final sorted array one at a time.
+# time complexity= 0(n^2)
+
