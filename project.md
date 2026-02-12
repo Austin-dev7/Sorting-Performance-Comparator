@@ -1,138 +1,165 @@
-Sorting Performance Comparator (Terminal Tool)
-1. Introduction
+SORTING PERORMANCE COMPARATOR (Terminal-Based Tool)
+Overview
 
-Sorting algorithms are fundamental in computer science.
-Although many sorting algorithms exist, they differ greatly in performance, especially as the size of the data increases.
+This project is a terminal-based sorting performance comparator designed to analyze and compare the execution time of different sorting algorithms when applied to the same dataset.
 
-This project is a terminal-based sorting performance comparator that measures and compares the execution time of different sorting algorithms on the same dataset.
+The tool helps demonstrate the practical impact of algorithmic time complexity using real execution time measurements.
 
-2. Project Objectives
+Project Goals
 
-The objectives of this project are:
+Implement multiple sorting algorithms
 
-To implement multiple sorting algorithms
+Compare their performance on identical input data
 
-To compare their execution time using real data
+Measure execution time accurately
 
-To demonstrate the practical impact of time complexity
+Demonstrate theoretical time complexity in practice
 
-To build a simple and reusable terminal tool
+Build a simple, reusable terminal application
 
-3. Sorting Algorithms Used:
+SORTING ALGORITHMS IMPLEMENTED
+1 Bubble Sort:
+Compares adjacent elements repeatedly
 
-3.1 Bubble Sort
-Repeatedly compares adjacent elements
-Swaps them if they are in the wrong order
-Simple but inefficient for large datasets
+Swaps elements when they are in the wrong order
 
-Time Complexity:
-Best case: O(n)
-Average/Worst case: O(n²)
+Simple to understand but inefficient for large datasets
 
-3.2 Insertion Sort
+TIME COMPLEXITY: 
+
+Best Case: O(n)
+
+Average Case: O(n²)
+
+Worst Case: O(n²)
+
+2 INSERTION SORT:
 Builds the sorted list one element at a time
 
 Efficient for small or nearly sorted datasets
 
-Time Complexity:
-Best case: O(n)
-Average/Worst case: O(n²)
+TIME COMPLEXITY:
 
-3.3 Merge Sort:
+Best Case: O(n)
+
+Average Case: O(n²)
+
+Worst Case: O(n²)
+
+3 MERGE SORT:
 Uses a divide-and-conquer approach
-Recursively splits the list and merges sorted halves
 
-Time Complexity:
-Best/Average/Worst case: O(n log n)
+Recursively splits and merges lists
 
-4. Project Structure
-sorting-performance-comparator/
+TIME COMPLEXITY:
 
-├── sorting project.py  # Main terminal program
-├── README              # about project
-└── utils.py            # Helper functions
+Best Case: O(n log n)
 
-5. How the Tool Works
+Average Case: O(n log n)
+
+Worst Case: O(n log n)
+
+QUICK SORT:
+
+Selects a pivot element
+
+Partitions the list around the pivot
+
+Recursively sorts sublists
+
+TIME COMPLEXITY 
+
+Best Case: O(n log n)
+
+Average Case: O(n log n)
+
+Worst Case: O(n²)
+
+HOW THE TOOLS WORK:
 
 The user runs the program from the terminal
 
 The user inputs the number of elements to sort
 
-A random list of numbers is generated
+A random dataset is generated
 
-Each sorting algorithm sorts the same dataset
+Each sorting algorithm:
 
-Execution time for each algorithm is measured
+Receives the same dataset
 
-Results are displayed in the terminal
+Sorts the data independently
 
-6. Measuring Performance
+Has its execution time measured
 
-The program measures performance by:
+The results are displayed in the terminal
 
-Recording the start time before sorting
+Performance Measurement Methodology:
 
-Executing the sorting algorithm
+Execution time is measured using system time
 
-Recording the end time after sorting
+Timing starts immediately before sorting begins
 
-Calculating the time difference
+Timing ends immediately after sorting completes
 
-This ensures that only the sorting process is measured.
+Only the sorting process is measured
 
-7. Sample Terminal Output
+This ensures a fair comparison across algorithms
+
+Sample Terminal Output:
 Enter number of elements: 10000
 
 Sorting 10000 elements...
 
-Bubble Sort: 2.4312 seconds
-Insertion Sort: 1.0875 seconds
-Merge Sort: 0.0289 seconds
+Bubble Sort:     2.4312 seconds
+Insertion Sort:  1.0875 seconds
+Selection Sort:  1.9543 seconds
+Merge Sort:      0.0289 seconds
+Quick Sort:      0.0217 seconds
 
-8. Why Performance Differs
+OBSERVATIONS:
 
-The performance difference occurs because:
+Quadratic algorithms (Bubble, Insertion, Selection) scale poorly
 
-Bubble Sort and Insertion Sort have quadratic time complexity
+Divide-and-conquer algorithms perform significantly better on large datasets
 
-Merge Sort has logarithmic growth
+Quick Sort often performs faster than Merge Sort in practice
 
-As input size increases, inefficient algorithms slow down rapidly
+Performance differences increase as input size grows.
 
-This project visually proves theoretical time complexity using real execution time.
+LIMITATIONS:
 
-9. Limitations
+Memory usage is not analyzed
 
-Bubble Sort and Insertion Sort are not suitable for large datasets
+Execution time varies based on system performance
 
-Execution time may vary slightly due to system performance
+Worst-case behavior of Quick Sort is not optimized in this version
 
-Memory usage is not measured in this version
+FUTURE ENHANCEMENT:
 
-10. Future Improvements
+Optimize Quick Sort using randomized pivots
 
-Add Quick Sort for further comparison
+Add graphical visualization of results
 
-Visualize results using graphs
+Export results to CSV format
 
-Export results to a CSV file
+Measure memory consumption
 
-Add command-line arguments for automation
+Add command-line arguments support
 
-11. Conclusion
+How to Run the Program:
+python sorting project.py
 
-This terminal-based sorting performance comparator demonstrates how different sorting algorithms behave in practice.
-It highlights the importance of choosing efficient algorithms when working with large datasets.
+Key Learning Outcomes:
 
-12. How to Run the Program
-python sortin project.py
+Understanding multiple sorting algorithms
 
-13. Key Learning Outcomes
+Practical evaluation of time complexity
 
-Understanding of sorting algorithms
+Experience with terminal-based applications
 
-Practical application of time complexity
+Improved software organization and documentation
 
-Experience with terminal-based tools
+Conclusion:
 
-Writing clean, documented code using Markdown
+This project highlights the importance of algorithm selection in software development.
+By comparing different sorting algorithms under the same conditions, the tool provides clear evidence of how efficiency affects performance.
