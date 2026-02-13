@@ -1,138 +1,168 @@
-Sorting Performance Comparator (Terminal Tool)
-1. Introduction
+**SORTING PERORMANCE COMPARATOR (Terminal-Based Tool)**
+---
+*Overview*
 
-Sorting algorithms are fundamental in computer science.
-Although many sorting algorithms exist, they differ greatly in performance, especially as the size of the data increases.
+This project is a terminal-based sorting performance comparator designed to analyze and compare the execution time of different sorting algorithms when applied to the same dataset.
 
-This project is a terminal-based sorting performance comparator that measures and compares the execution time of different sorting algorithms on the same dataset.
+The tool helps demonstrate the practical impact of algorithmic time complexity using real execution time measurements.
 
-2. Project Objectives
+*Project Goals:*
 
-The objectives of this project are:
+- Implement multiple sorting algorithms
 
-To implement multiple sorting algorithms
+- Compare their performance on identical input data
 
-To compare their execution time using real data
+- Measure execution time accurately
 
-To demonstrate the practical impact of time complexity
+- Demonstrate theoretical time complexity in practice
 
-To build a simple and reusable terminal tool
+- Build a simple, reusable terminal application
+---
+**SORTING ALGORITHMS IMPLEMENTED**
 
-3. Sorting Algorithms Used:
+***1 Bubble Sort:***
 
-3.1 Bubble Sort
-Repeatedly compares adjacent elements
-Swaps them if they are in the wrong order
-Simple but inefficient for large datasets
+- Compares adjacent elements repeatedly
 
-Time Complexity:
-Best case: O(n)
-Average/Worst case: O(n²)
+- Swaps elements when they are in the wrong order
 
-3.2 Insertion Sort
-Builds the sorted list one element at a time
+-Simple to understand but inefficient for large datasets
 
-Efficient for small or nearly sorted datasets
+-*TIME COMPLEXITY:* 
 
-Time Complexity:
-Best case: O(n)
-Average/Worst case: O(n²)
+- Best Case: O(n)
 
-3.3 Merge Sort:
-Uses a divide-and-conquer approach
-Recursively splits the list and merges sorted halves
+- Average Case: O(n²)
 
-Time Complexity:
-Best/Average/Worst case: O(n log n)
+- Worst Case: O(n²)
+---
+***2 INSERTION SORT:***
+- Builds the sorted list one element at a time
 
-4. Project Structure
-sorting-performance-comparator/
+- Efficient for small or nearly sorted datasets
 
-├── sorting project.py  # Main terminal program
-├── README              # about project
-└── utils.py            # Helper functions
+- *TIME COMPLEXITY:*
 
-5. How the Tool Works
+- Best Case: O(n)
 
-The user runs the program from the terminal
+- Average Case: O(n²)
 
-The user inputs the number of elements to sort
+- Worst Case: O(n²)
+---
+*MERGE SORT:*
+-Uses a divide-and-conquer approach
 
-A random list of numbers is generated
+- Recursively splits and merges lists
 
-Each sorting algorithm sorts the same dataset
+- *TIME COMPLEXITY:*
 
-Execution time for each algorithm is measured
+- Best Case: O(n log n)
 
-Results are displayed in the terminal
+- Average Case: O(n log n)
 
-6. Measuring Performance
+- Worst Case: O(n log n)
+---
+*QUICK SORT:*
 
-The program measures performance by:
+- Selects a pivot element
 
-Recording the start time before sorting
+- Partitions the list around the pivot
 
-Executing the sorting algorithm
+- Recursively sorts sublists
 
-Recording the end time after sorting
+- *TIME COMPLEXITY*
 
-Calculating the time difference
+- Best Case: O(n log n)
 
-This ensures that only the sorting process is measured.
+- Average Case: O(n log n)
 
-7. Sample Terminal Output
+- Worst Case: O(n²)
+---
+***HOW THE TOOLS WORK:***
+
+- The user runs the program from the terminal
+
+- The user inputs the number of elements to sort
+
+- A random dataset is generated
+
+- Each sorting algorithm:
+
+- Receives the same dataset
+
+- Sorts the data independently
+
+- Has its execution time measured
+
+- The results are displayed in the terminal
+
+***Performance Measurement Methodology:***
+
+- Execution time is measured using system time
+
+- Timing starts immediately before sorting begins
+
+- Timing ends immediately after sorting completes
+
+- Only the sorting process is measured
+
+- This ensures a fair comparison across algorithms
+
+*Sample Terminal Output:*
 Enter number of elements: 10000
 
 Sorting 10000 elements...
 
-Bubble Sort: 2.4312 seconds
-Insertion Sort: 1.0875 seconds
-Merge Sort: 0.0289 seconds
+- Bubble Sort:     2.4312 seconds
+- Insertion Sort:  1.0875 seconds
+- Selection Sort:  1.9543 seconds
+- Merge Sort:      0.0289 seconds
+- Quick Sort:      0.0217 seconds
+---
+**OBSERVATIONS:**
 
-8. Why Performance Differs
+- Quadratic algorithms (Bubble, Insertion, Selection) scale poorly
 
-The performance difference occurs because:
+- Divide-and-conquer algorithms perform significantly better on large datasets
 
-Bubble Sort and Insertion Sort have quadratic time complexity
+- Quick Sort often performs faster than Merge Sort in practice
 
-Merge Sort has logarithmic growth
+- Performance differences increase as input size grows.
+---
+**LIMITATIONS:**
 
-As input size increases, inefficient algorithms slow down rapidly
+- Memory usage is not analyzed
 
-This project visually proves theoretical time complexity using real execution time.
+- Execution time varies based on system performance
 
-9. Limitations
+- Worst-case behavior of Quick Sort is not optimized in this version
+---
+**FUTURE ENHANCEMENT:**
 
-Bubble Sort and Insertion Sort are not suitable for large datasets
+- Optimize Quick Sort using randomized pivots
 
-Execution time may vary slightly due to system performance
+- Add graphical visualization of results
 
-Memory usage is not measured in this version
+- Export results to CSV format
 
-10. Future Improvements
+- Measure memory consumption
 
-Add Quick Sort for further comparison
+- Add command-line arguments support
 
-Visualize results using graphs
+**How to Run the Program:**
+##python sorting project.py
 
-Export results to a CSV file
+*Key Learning Outcomes:*
 
-Add command-line arguments for automation
+- Understanding multiple sorting algorithms
 
-11. Conclusion
+- Practical evaluation of time complexity
 
-This terminal-based sorting performance comparator demonstrates how different sorting algorithms behave in practice.
-It highlights the importance of choosing efficient algorithms when working with large datasets.
+- Experience with terminal-based applications
 
-12. How to Run the Program
-python sortin project.py
+- Improved software organization and documentation
+---
+***Conclusion:***
 
-13. Key Learning Outcomes
-
-Understanding of sorting algorithms
-
-Practical application of time complexity
-
-Experience with terminal-based tools
-
-Writing clean, documented code using Markdown
+This project highlights the importance of algorithm selection in software development.
+By comparing different sorting algorithms under the same conditions, the tool provides clear evidence of how efficiency affects performance.
