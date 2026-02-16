@@ -1,0 +1,11 @@
+size = int(input("Enter the size of the dataset to sort: "))
+data = generate_random_list(from algorithm import bubble_sort, insertion_sort, merge_sort, quick_sort
+from generate import generate_random_list
+from time_utils import measure_time
+data = generate_random_list(1000)
+print("Bubble Sort time:", measure_time(bubble_sort, data))
+print("Insertion Sort time:", measure_time(insertion_sort, data))
+print("Merge Sort time:", measure_time(merge_sort, data))
+print("Quick Sort time:", measure_time(quick_sort, data))
+size = int(input("Enter the size of the dataset to sort: "))
+data = generate_random_list(size)
