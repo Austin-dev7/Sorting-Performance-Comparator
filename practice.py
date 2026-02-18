@@ -6,9 +6,9 @@ while guess != secret_number:
     guess = int(input("enter your guess:"))
     if guess != secret_number:
         print(f"{guess} is the wrong guess , do better")
-    elif guess ==  secret_number:
+    elif guess ==  secret_number: 
         print(f"{guess} is the right one" )
-print(f"the secret number is {secret_number}")
+print(f"the secret number is {secret_number}") 
 
 
-# pascal case naming
+

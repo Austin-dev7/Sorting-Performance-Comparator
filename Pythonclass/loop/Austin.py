@@ -64,10 +64,9 @@
 # lambda  age: "An adult" if age >=18 else "a minor"
 # age_check = lambda age:"An Andult" if age >=18 else "a minor"
 # print(f"your age {age_check(23)}")
-# print(f"you are{age_check(23)}")
 # good = lambda a,b :a + b
 # print({good( 2, 2,)})
-#
+# #
 
 # people = [
 #     {"name": "John", "age": 30},
@@ -89,8 +88,8 @@
 #     os.rename(os.path.join(folder, file), os.path.join(folder,new_name))
 
 
-time = open("aug.py",'w')
-time.write("good girl")
+# time = open("aug.py",'w')
+# time.write("good girl")
 
-ht = ("thought")
-print(ht)
+# ht = ("thought")
+# print(ht)
