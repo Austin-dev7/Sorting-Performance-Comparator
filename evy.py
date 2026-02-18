@@ -1,0 +1,6 @@
+python = ("hello,world")
+print(python)
+emeka = ("hi world")
+print(emeka)
+security = (sys.version)
+print(security)
