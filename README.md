@@ -5,7 +5,7 @@ The goal of this project is to compare the performance of different sorting algo
 Design Components
 
 1. Sorting Algorithms
-    - Implement the following sorting algorithms:
+    - Implement the following sorting algorithms: 
         - Bubble Sort
         - Selection Sort
         - Insertion Sort
