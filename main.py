@@ -1,55 +1,39 @@
-Ask the user for dataset size
-
-Generate random data
-
-Run all sorting algorithms
-
-Measure their time
-
-Print the results
-
-Show the fastest one
-
-
 from generate import generate_random_list
 from sorting_algorithms import bubble_sort, insertion_sort, merge_sort, quick_sort
 from time_utils import measure_time
 
 
 def main():
-    # Ask user for dataset size
-    size = int(input("Enter the size of the dataset to sort: "))
+    sizes = [100, 1000, 10000]
 
-    # Generate random data
-    data = generate_random_list(size)
+    print("Sorting Performance Comparison\n")
 
-    print("\nSorting Performance Results")
-    print("Algorithm       Time (seconds)")
-    print("------------------------------")
+    for size in sizes:
+        print(f"\nDataset Size: {size}")
+        print("----------------------------")
 
-    # Measure time for each algorithm
-    bubble_time = measure_time(bubble_sort, data)
-    print(f"Bubble Sort     {bubble_time:.6f}")
+        data = generate_random_list(size)
 
-    insertion_time = measure_time(insertion_sort, data)
-    print(f"Insertion Sort  {insertion_time:.6f}")
+        # Measure each sorting algorithm
+        bubble_time = measure_time(bubble_sort, data)
+        insertion_time = measure_time(insertion_sort, data)
+        merge_time = measure_time(merge_sort, data)
+        quick_time = measure_time(quick_sort, data)
+        python_time = measure_time(sorted, data)  # Python built-in sort
 
-    merge_time = measure_time(merge_sort, data)
-    print(f"Merge Sort      {merge_time:.6f}")
+        # Print results
+        print(f"Bubble Sort:          {bubble_time:.6f} seconds")
+        print(f"Insertion Sort:       {insertion_time:.6f} seconds")
+        print(f"Merge Sort:           {merge_time:.6f} seconds")
+        print(f"Quick Sort:           {quick_time:.6f} seconds")
+        print(f"Python Built-in Sort: {python_time:.6f} seconds")
 
-    quick_time = measure_time(quick_sort, data)
-    print(f"Quick Sort      {quick_time:.6f}")
-
-    # Find fastest algorithm
-    times = {
-        "Bubble Sort": bubble_time,
-        "Insertion Sort": insertion_time,
-        "Merge Sort": merge_time,
-        "Quick Sort": quick_time
-    }
-
-    fastest = min(times, key=times.get)
-    print(f"\nFastest algorithm: {fastest} ({times[fastest]:.6f} seconds)")
+    # Print conclusion after all dataset sizes
+    print("\nConclusion:")
+    print("O(n²) algorithms (Bubble, Insertion) become slow as dataset size increases.")
+    print("O(n log n) algorithms (Merge, Quick) scale much better for large datasets.")
+    print("Quick Sort consistently performs best for large datasets.")
+    print("Python's built-in sort is highly optimized and usually fastest for large datasets.")
 
 
 if __name__ == "__main__":

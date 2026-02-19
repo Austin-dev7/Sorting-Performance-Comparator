@@ -1,29 +1,27 @@
- LSorting Performance Comparator
+ # Sorting Performance Comparator
 
-About This Project
+## Project Overview
+This project compares the performance of different sorting algorithms by measuring how long they take to sort datasets of different sizes.  
+It demonstrates the practical differences between algorithms with different time complexities.
 
-This project compares different sorting algorithms to see which one is faster.
+## Algorithms Implemented
+- **Bubble Sort** – O(n²)  
+- **Insertion Sort** – O(n²)  
+- **Merge Sort** – O(n log n)  
+- **Quick Sort** – O(n log n) (average case)  
+- **Python Built-in Sort** – Highly optimized
 
-It allows the user to enter the size of a dataset, then it sorts the data using different algorithms and shows how long each one takes.
+## Files and Purpose
+| File | Responsibility |
+|------|----------------|
+| `main.py` | Runs the program and prints results |
+| `generate.py` | Generates random datasets |
+| `sorting_algorithms.py` | Contains sorting algorithm implementations |
+| `time_utils.py` | Measures execution time |
 
-<!-- Algorithms Used -->
-
-Bubble Sort
-
-Insertion Sort
-
-Merge Sort
-
-Quick Sort
-
-<!-- How It Works -->
-
-The program generates random numbers.
-
-It sorts the numbers using each algorithm.
-
-It measures the time taken.
-
-It displays the results.
-
-It shows which algorithm is the fastest.
+## How to Run
+1. Make sure all files are in the same folder.  
+2. Open a terminal or PowerShell in the project folder.  
+3. Run the program with:
+   ```bash
+   python main.py

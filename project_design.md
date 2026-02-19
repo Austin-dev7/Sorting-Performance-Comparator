@@ -64,3 +64,24 @@ Quick Sort	O(n log n) (average case)
         |     main.py       |
         | Displays Results  |
         +-------------------+
+   +-------------------+
+        |     main.py       |
+        | Displays Results  |
+        +-------------------+
+
+---
+
+### Results Overview (Example)
+
+| Algorithm           | Dataset 100 | Dataset 1,000 | Dataset 10,000 |
+|--------------------|------------|---------------|----------------|
+| Bubble Sort         | 0.000558 s | 0.083614 s    | 7.85 s         |
+| Insertion Sort      | 0.000245 s | 0.042045 s    | 4.03 s         |
+| Merge Sort          | 0.000244 s | 0.003034 s    | 0.043 s        |
+| Quick Sort          | 0.000210 s | 0.003904 s    | 0.023 s        |
+| Python Built-in     | 0.000014 s | 0.000148 s    | 0.001 s        |
+
+**Conclusion:**  
+- O(n²) algorithms (Bubble, Insertion) are slow for large datasets.  
+- O(n log n) algorithms (Merge, Quick) scale much better.  
+- Python’s built-in sort is highly optimized and usually fastest.
