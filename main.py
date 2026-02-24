@@ -3,7 +3,7 @@ from sorting_algorithms import bubble_sort, insertion_sort, merge_sort, quick_so
 from time_utils import measure_time
 
 
-def main():
+def run_comparison():
     sizes = [100, 1000, 10000]
 
     print("Sorting Performance Comparison\n")
@@ -34,6 +34,23 @@ def main():
     print("O(n log n) algorithms (Merge, Quick) scale much better for large datasets.")
     print("Quick Sort consistently performs best for large datasets.")
     print("Python's built-in sort is highly optimized and usually fastest for large datasets.")
+
+
+def main():
+    while True:
+        print("\n=== Sorting Performance Comparator ===")
+        print("1. Run full comparison")
+        print("2. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            run_comparison()  # your existing function
+        elif choice == "2":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Try again.")
 
 
 if __name__ == "__main__":
