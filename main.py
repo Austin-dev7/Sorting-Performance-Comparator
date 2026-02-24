@@ -2,56 +2,75 @@ from generate import generate_random_list
 from sorting_algorithms import bubble_sort, insertion_sort, merge_sort, quick_sort
 from time_utils import measure_time
 
-
 def run_comparison():
-    sizes = [100, 1000, 10000]
+    # Step 1: Choose dataset size
+    while True:
+        try:
+            size = int(input("Enter dataset size (positive integer): "))
+            if size > 0:
+                break
+            else:
+                print("Please enter a positive integer.")
+        except ValueError:
+            print("Invalid input. Enter a number.")
 
-    print("Sorting Performance Comparison\n")
+    data = generate_random_list(size)
 
-    for size in sizes:
-        print(f"\nDataset Size: {size}")
-        print("----------------------------")
+    # Step 2: Choose algorithms
+    algorithms = {
+        "1": ("Bubble Sort", bubble_sort),
+        "2": ("Insertion Sort", insertion_sort),
+        "3": ("Merge Sort", merge_sort),
+        "4": ("Quick Sort", quick_sort),
+        "5": ("Python Built-in", sorted)
+    }
 
-        data = generate_random_list(size)
+    print("\nChoose algorithm(s) to run:")
+    for key, (name, _) in algorithms.items():
+        print(f"{key}. {name}")
+    print("6. All Algorithms")
 
-        # Measure each sorting algorithm
-        bubble_time = measure_time(bubble_sort, data)
-        insertion_time = measure_time(insertion_sort, data)
-        merge_time = measure_time(merge_sort, data)
-        quick_time = measure_time(quick_sort, data)
-        python_time = measure_time(sorted, data)  # Python built-in sort
+    choices = input("Enter choice(s) (comma separated, e.g., 1,3,5): ").split(",")
+    choices = [c.strip() for c in choices]
 
-        # Print results
-        print(f"Bubble Sort:          {bubble_time:.6f} seconds")
-        print(f"Insertion Sort:       {insertion_time:.6f} seconds")
-        print(f"Merge Sort:           {merge_time:.6f} seconds")
-        print(f"Quick Sort:           {quick_time:.6f} seconds")
-        print(f"Python Built-in Sort: {python_time:.6f} seconds")
+    # Step 3: Run selected algorithms
+    results = {}
+    if "6" in choices:
+        selected = algorithms.keys()
+    else:
+        selected = [c for c in choices if c in algorithms]
 
-    # Print conclusion after all dataset sizes
+    for c in selected:
+        name, func = algorithms[c]
+        results[name] = measure_time(func, data)
+
+    # Step 4: Print results
+    print(f"\nDataset Size: {size}")
+    print("----------------------------")
+    for name, t in results.items():
+        print(f"{name}: {t:.6f} seconds")
+
+    # Step 5: Print conclusion
     print("\nConclusion:")
     print("O(n²) algorithms (Bubble, Insertion) become slow as dataset size increases.")
     print("O(n log n) algorithms (Merge, Quick) scale much better for large datasets.")
     print("Quick Sort consistently performs best for large datasets.")
     print("Python's built-in sort is highly optimized and usually fastest for large datasets.")
 
-
 def main():
     while True:
         print("\n=== Sorting Performance Comparator ===")
-        print("1. Run full comparison")
+        print("1. Run comparison")
         print("2. Exit")
-
-        choice = input("Enter your choice: ")
+        choice = input("Enter your choice: ").strip()
 
         if choice == "1":
-            run_comparison()  # your existing function
+            run_comparison()
         elif choice == "2":
-            print("Goodbye!")
+            print("Exiting...")
             break
         else:
             print("Invalid choice. Try again.")
-
 
 if __name__ == "__main__":
     main()
